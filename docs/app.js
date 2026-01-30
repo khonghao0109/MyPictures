@@ -39,7 +39,7 @@ function renderAlbum(album) {
 
   const head = document.createElement("div");
   head.className = "album-head";
-  head.innerHTML = `<h2>${album.title}</h2><p>${album.description}</p>`;
+  head.innerHTML = `<h2>${album.title}</h2><p>${album.description || ""}</p>`;
   article.appendChild(head);
 
   // Grid ảnh
@@ -62,7 +62,7 @@ function renderAlbum(album) {
 
   if ((album.images || []).length) article.appendChild(grid);
 
-  // Video (mp4 trong repo) — có thể play hoặc không tùy codec, nhưng ít nhất vẫn có link mở
+  // Video
   if ((album.videos || []).length) {
     const videoWrap = document.createElement("div");
     videoWrap.className = "video";
@@ -71,7 +71,12 @@ function renderAlbum(album) {
     album.videos.forEach((src) => {
       const ratio = document.createElement("div");
       ratio.className = "ratio";
-      ratio.innerHTML = `<video controls preload="metadata" src="${src}"></video>`;
+      ratio.innerHTML = `
+        <video controls preload="metadata" playsinline>
+          <source src="${src}" type="video/mp4" />
+          Trình duyệt của bạn không hỗ trợ phát video.
+        </video>
+      `;
       videoWrap.appendChild(ratio);
 
       const link = document.createElement("div");
@@ -110,7 +115,6 @@ async function init() {
   const res = await fetch("./manifest.json", { cache: "no-store" });
   const data = await res.json();
 
-  // Render albums
   albumsEl.innerHTML = "";
   data.albums.forEach((album) => albumsEl.appendChild(renderAlbum(album)));
 
