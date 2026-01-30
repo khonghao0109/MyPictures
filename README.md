@@ -86,3 +86,10 @@ Hãy gửi **pull request** hoặc liên hệ trực tiếp với người quả
 - 👤 **Tác giả:** khonghao0109
 - 📧 **Gmail:** khonghao0109@gmail.com
 - 🔗 **GitHub:** https://github.com/khonghao0109/MyPictures
+
+## 📄 License
+
+All images in this repository are licensed under  
+**Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 (CC BY-NC-ND 4.0)**.
+
+© 2026 khonghao0109. All rights reserved.
