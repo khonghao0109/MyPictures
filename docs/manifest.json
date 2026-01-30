@@ -20,7 +20,10 @@
         "./media/AoDaiTet/aodai_AoDaiTet_13.jpg",
         "./media/AoDaiTet/aodai_AoDaiTet_14.jpg"
       ],
-      "videos": [],
+      "videos": [
+        "./media/AoDaiTet/aodai_AoDaiTet_15.mp4",
+        "./media/AoDaiTet/aodai_AoDaiTet_16.mp4"
+      ],
       "embeds": []
     },
     {
@@ -69,7 +72,9 @@
         "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_15.jpg",
         "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_16.jpg"
       ],
-      "videos": [],
+      "videos": [
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_17.mp4"
+      ],
       "embeds": []
     },
     {
