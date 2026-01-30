@@ -301,3 +301,24 @@ body {
     height: 220px;
   }
 }
+
+.card {
+  position: relative;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.18s ease;
+}
+
+.card:hover img {
+  transform: scale(1.02);
+}

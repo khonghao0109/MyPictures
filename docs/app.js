@@ -1,3 +1,8 @@
+const albumsEl = document.getElementById("albums");
+const filterEl = document.getElementById("filter");
+const searchEl = document.getElementById("search");
+
+// Lightbox
 const lightbox = document.getElementById("lightbox");
 const lbImg = document.getElementById("lbImg");
 const lbCaption = document.getElementById("lbCaption");
@@ -17,32 +22,81 @@ function closeLightbox() {
   lbCaption.textContent = "";
 }
 
-document.addEventListener("click", (e) => {
-  const img = e.target.closest("img[data-full]");
-  if (img) {
-    openLightbox(img.dataset.full, img.alt);
-    return;
-  }
-  if (e.target === lightbox) closeLightbox();
-});
-
 lbClose.addEventListener("click", closeLightbox);
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeLightbox();
 });
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
 
-// Filter + search
-const filter = document.getElementById("filter");
-const search = document.getElementById("search");
-const albums = Array.from(document.querySelectorAll(".album"));
+function renderAlbum(album) {
+  const article = document.createElement("article");
+  article.className = "album";
+  article.dataset.category = album.folder;
+  article.dataset.keywords =
+    `${album.folder} ${album.title} ${album.description}`.toLowerCase();
+
+  const head = document.createElement("div");
+  head.className = "album-head";
+  head.innerHTML = `<h2>${album.title}</h2><p>${album.description}</p>`;
+  article.appendChild(head);
+
+  // Grid ảnh
+  const grid = document.createElement("div");
+  grid.className = "grid";
+
+  (album.images || []).forEach((src, idx) => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const img = document.createElement("img");
+    img.loading = "lazy";
+    img.src = src;
+    img.alt = `${album.folder} ${idx + 1}`;
+    img.addEventListener("click", () => openLightbox(src, img.alt));
+
+    card.appendChild(img);
+    grid.appendChild(card);
+  });
+
+  if ((album.images || []).length) article.appendChild(grid);
+
+  // Video (mp4 trong repo) — có thể play hoặc không tùy codec, nhưng ít nhất vẫn có link mở
+  if ((album.videos || []).length) {
+    const videoWrap = document.createElement("div");
+    videoWrap.className = "video";
+    videoWrap.innerHTML = `<div class="video-title">🎥 Video</div>`;
+
+    album.videos.forEach((src) => {
+      const ratio = document.createElement("div");
+      ratio.className = "ratio";
+      ratio.innerHTML = `<video controls preload="metadata" src="${src}"></video>`;
+      videoWrap.appendChild(ratio);
+
+      const link = document.createElement("div");
+      link.style.marginTop = "8px";
+      link.innerHTML = `<a href="${src}" target="_blank" rel="noopener noreferrer">Mở video ở tab mới / tải về</a>`;
+      videoWrap.appendChild(link);
+
+      const spacer = document.createElement("div");
+      spacer.style.height = "14px";
+      videoWrap.appendChild(spacer);
+    });
+
+    article.appendChild(videoWrap);
+  }
+
+  return article;
+}
 
 function applyFilters() {
-  const f = filter.value;
-  const q = (search.value || "").trim().toLowerCase();
+  const f = filterEl.value;
+  const q = (searchEl.value || "").trim().toLowerCase();
 
-  albums.forEach((a) => {
+  document.querySelectorAll(".album").forEach((a) => {
     const cat = a.dataset.category;
-    const kw = (a.dataset.keywords || "").toLowerCase();
+    const kw = a.dataset.keywords || "";
     const text = a.innerText.toLowerCase();
 
     const matchCat = f === "all" || cat === f;
@@ -52,6 +106,17 @@ function applyFilters() {
   });
 }
 
-filter.addEventListener("change", applyFilters);
-search.addEventListener("input", applyFilters);
-applyFilters();
+async function init() {
+  const res = await fetch("./manifest.json", { cache: "no-store" });
+  const data = await res.json();
+
+  // Render albums
+  albumsEl.innerHTML = "";
+  data.albums.forEach((album) => albumsEl.appendChild(renderAlbum(album)));
+
+  filterEl.addEventListener("change", applyFilters);
+  searchEl.addEventListener("input", applyFilters);
+  applyFilters();
+}
+
+init();
