@@ -45,7 +45,7 @@ Ghi lại những khoảnh khắc rực rỡ của màn bắn pháo hoa chào m�
 
 Bộ ảnh thể hiện không khí trang trọng, thiêng liêng nhưng cũng đầy cảm xúc và tự hào dân tộc.
 
-### 📁 `DoiSong_ThienNhien`
+📁 `DoiSong_ThienNhien`
 
 Bộ ảnh **Đời Sống & Thiên Nhiên** — phản ánh những khoảnh khắc đời thường gắn liền với môi trường tự nhiên và nhịp sống xung quanh.
 
@@ -83,5 +83,6 @@ Hãy gửi **pull request** hoặc liên hệ trực tiếp với người quả
 
 ## 📝 Liên hệ
 
-Tác giả: **khonghao0109**  
+Tác giả: **khonghao0109**
+Gmail: **khonghao0109@gmail.com**
 GitHub: https://github.com/khonghao0109/MyPictures
