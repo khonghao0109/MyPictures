@@ -5,7 +5,7 @@ Repo này được tổ chức theo từng chủ đề hình ảnh khác nhau đ
 
 ---
 
-## 🌟 Cấu trúc thư mục
+## 🌟 Cấu trúc thư mục docs/media
 
 📁 `AoDaiTet`  
 Bộ ảnh chủ đề **Áo Dài Tết** — ghi lại vẻ đẹp truyền thống của trang phục áo dài Việt Nam trong không khí Tết cổ truyền.
