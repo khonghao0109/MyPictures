@@ -83,6 +83,6 @@ Hãy gửi **pull request** hoặc liên hệ trực tiếp với người quả
 
 ## 📝 Liên hệ
 
-Tác giả: **khonghao0109**
-Gmail: **khonghao0109@gmail.com**
-GitHub: https://github.com/khonghao0109/MyPictures
+- 👤 **Tác giả:** khonghao0109
+- 📧 **Gmail:** khonghao0109@gmail.com
+- 🔗 **GitHub:** https://github.com/khonghao0109/MyPictures
