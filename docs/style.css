@@ -322,3 +322,48 @@ body {
 .card:hover img {
   transform: scale(1.02);
 }
+
+/* Khối chứa video: căn giữa */
+
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px 18px;
+}
+
+/* Tiêu đề video căn giữa */
+
+.video-title {
+  width: min(960px, 100%);
+  color: var(--muted, #a9b0c2);
+}
+
+/* Khung video: đúng tỉ lệ, đúng kích thước, căn giữa */
+
+.ratio {
+  width: min(960px, 100%);
+  /* giới hạn chiều ngang (bạn có thể tăng/giảm) */
+  aspect-ratio: 16 / 9;
+  /* ôm đúng kích thước video */
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #000;
+  /* nền đen phía sau video */
+  display: grid;
+  place-items: center;
+}
+
+/* Video/iframe luôn vừa khít khung ratio */
+
+.ratio video,
+.ratio iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  object-fit: contain;
+  /* không bị méo */
+}
