@@ -2,8 +2,8 @@
   "albums": [
     {
       "folder": "AoDaiTet",
-      "title": "👘 Áo Dài Tết",
-      "description": "Dịp Tết Nguyên Đán — vẻ đẹp áo dài truyền thống trong không khí mùa xuân.",
+      "title": "AoDaiTet",
+      "description": "",
       "images": [
         "./media/AoDaiTet/aodai_AoDaiTet_01.jpg",
         "./media/AoDaiTet/aodai_AoDaiTet_02.jpg",
@@ -24,9 +24,58 @@
       "embeds": []
     },
     {
+      "folder": "DoiSong_ThienNhien",
+      "title": "DoiSong_ThienNhien",
+      "description": "",
+      "images": [
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_01.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_02.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_03.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_04.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_05.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_06.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_07.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_08.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_09.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_10.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_11.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_12.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_13.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_14.jpg",
+        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_15.jpg"
+      ],
+      "videos": [],
+      "embeds": []
+    },
+    {
+      "folder": "PhaoHoaDHD_XIV",
+      "title": "PhaoHoaDHD_XIV",
+      "description": "",
+      "images": [
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_01.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_02.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_03.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_04.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_05.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_06.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_07.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_08.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_09.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_10.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_11.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_12.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_13.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_14.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_15.jpg",
+        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_16.jpg"
+      ],
+      "videos": [],
+      "embeds": []
+    },
+    {
       "folder": "YenTu29_01",
-      "title": "⛰️ Hành Trình Yên Tử (29/01)",
-      "description": "Trekking + hành hương — núi rừng, mây mù, chùa chiền và khoảnh khắc của nhóm.",
+      "title": "YenTu29_01",
+      "description": "",
       "images": [
         "./media/YenTu29_01/yentu_YenTu29_01_04.jpg",
         "./media/YenTu29_01/yentu_YenTu29_01_05.jpg",
@@ -61,55 +110,6 @@
         "./media/YenTu29_01/yentu_YenTu29_01_02.mp4",
         "./media/YenTu29_01/yentu_YenTu29_01_03.mp4"
       ],
-      "embeds": []
-    },
-    {
-      "folder": "DoiSong_ThienNhien",
-      "title": "🌿 Đời Sống & Thiên Nhiên",
-      "description": "Những khoảnh khắc bình dị: đời thường, ánh sáng, cây cỏ, phong cảnh.",
-      "images": [
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_01.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_02.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_03.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_04.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_05.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_06.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_07.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_08.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_09.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_10.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_11.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_12.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_13.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_14.jpg",
-        "./media/DoiSong_ThienNhien/nature_DoiSong_ThienNhien_15.jpg"
-      ],
-      "videos": [],
-      "embeds": []
-    },
-    {
-      "folder": "PhaoHoaDHD_XIV",
-      "title": "🎆 Pháo Hoa DHD XIV",
-      "description": "21:30 — 23/01/2026 • Cung Thiếu nhi. Ảnh + video sự kiện (video nhúng để phát mượt).",
-      "images": [
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_01.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_02.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_03.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_04.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_05.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_06.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_07.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_08.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_09.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_10.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_11.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_12.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_13.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_14.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_15.jpg",
-        "./media/PhaoHoaDHD_XIV/phaohoa_PhaoHoaDHD_XIV_16.jpg"
-      ],
-      "videos": [],
       "embeds": []
     }
   ]
