@@ -1,0 +1,60 @@
+name: Build manifest
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate manifest.json
+        run: |
+          python - << 'PY'
+          import os, json
+
+          ALBUMS = [
+              ("AoDaiTet", "👘 Áo Dài Tết", "Dịp Tết Nguyên Đán — vẻ đẹp áo dài truyền thống trong không khí mùa xuân."),
+              ("YenTu29_01", "⛰️ Hành Trình Yên Tử (29/01)", "Trekking + hành hương — núi rừng, mây mù, chùa chiền và khoảnh khắc của nhóm."),
+              ("DoiSong_ThienNhien", "🌿 Đời Sống & Thiên Nhiên", "Những khoảnh khắc bình dị: đời thường, ánh sáng, cây cỏ, phong cảnh."),
+              ("PhaoHoaDHD_XIV", "🎆 Pháo Hoa DHD XIV", "21:30 — 23/01/2026 • Cung Thiếu nhi. Ảnh + video sự kiện (video nhúng để phát mượt)."),
+          ]
+
+          IMAGE_EXTS = {".jpg",".jpeg",".png",".webp",".gif"}
+          VIDEO_EXTS = {".mp4",".mov",".mkv",".avi",".webm"}
+
+          os.makedirs("docs", exist_ok=True)
+          manifest = {"albums": []}
+
+          for folder, title, desc in ALBUMS:
+            if not os.path.isdir(folder): 
+              continue
+            files = sorted([f for f in os.listdir(folder) if os.path.splitext(f)[1].lower() in IMAGE_EXTS|VIDEO_EXTS])
+            images, videos = [], []
+            for f in files:
+              ext = os.path.splitext(f)[1].lower()
+              rel = f"../{folder}/{f}"
+              (images if ext in IMAGE_EXTS else videos).append(rel)
+            manifest["albums"].append({
+              "folder": folder,
+              "title": title,
+              "description": desc,
+              "images": images,
+              "videos": videos,
+              "embeds": []
+            })
+
+          with open("docs/manifest.json","w",encoding="utf-8") as out:
+            json.dump(manifest, out, ensure_ascii=False, indent=2)
+          print("generated docs/manifest.json")
+          PY
+
+      - name: Commit manifest.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/manifest.json
+          git commit -m "Auto-generate manifest.json" || echo "No changes"
+          git push
