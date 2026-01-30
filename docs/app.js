@@ -71,12 +71,19 @@ function renderAlbum(album) {
     album.videos.forEach((src) => {
       const ratio = document.createElement("div");
       ratio.className = "ratio";
-      ratio.innerHTML = `
-        <video controls preload="metadata" playsinline>
-          <source src="${src}" type="video/mp4" />
-          Trình duyệt của bạn không hỗ trợ phát video.
-        </video>
-      `;
+
+      const v = document.createElement("video");
+      v.controls = true;
+      v.preload = "metadata";
+      v.playsInline = true;
+
+      const source = document.createElement("source");
+      source.src = src;
+      source.type = "video/mp4";
+
+      v.appendChild(source);
+      ratio.appendChild(v);
+
       videoWrap.appendChild(ratio);
 
       const link = document.createElement("div");
