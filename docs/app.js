@@ -30,12 +30,35 @@ lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox) closeLightbox();
 });
 
+/**
+ * Nếu GitHub Pages trả MIME không chuẩn, <video> có thể không phát khi nhúng.
+ * Bật USE_BLOB_WORKAROUND = true để fetch mp4 -> blob URL (fix chắc chắn).
+ */
+const USE_BLOB_WORKAROUND = true;
+
+async function attachVideoBlob(videoEl, url) {
+  const res = await fetch(url, { cache: "force-cache" });
+  if (!res.ok) throw new Error(`Fetch video failed: ${res.status} ${url}`);
+  const blob = await res.blob();
+  const mp4 = new Blob([blob], { type: "video/mp4" });
+  const objectUrl = URL.createObjectURL(mp4);
+  videoEl.src = objectUrl;
+  // Giải phóng URL blob khi video element bị remove
+  videoEl.addEventListener(
+    "emptied",
+    () => {
+      URL.revokeObjectURL(objectUrl);
+    },
+    { once: true },
+  );
+}
+
 function renderAlbum(album) {
   const article = document.createElement("article");
   article.className = "album";
   article.dataset.category = album.folder;
   article.dataset.keywords =
-    `${album.folder} ${album.title} ${album.description}`.toLowerCase();
+    `${album.folder} ${album.title} ${album.description || ""}`.toLowerCase();
 
   const head = document.createElement("div");
   head.className = "album-head";
@@ -77,13 +100,30 @@ function renderAlbum(album) {
       v.preload = "metadata";
       v.playsInline = true;
 
-      const source = document.createElement("source");
-      source.src = src;
-      source.type = "video/mp4";
+      // Debug nếu cần:
+      v.addEventListener("error", () => {
+        console.log("VIDEO ERROR:", src, v.error);
+      });
 
-      v.appendChild(source);
+      if (USE_BLOB_WORKAROUND) {
+        // Fix chắc chắn khi server trả sai Content-Type
+        attachVideoBlob(v, src).catch((err) => {
+          console.warn("Blob workaround failed, fallback to source tag:", err);
+
+          // fallback: source tag
+          const s = document.createElement("source");
+          s.src = src;
+          s.type = "video/mp4";
+          v.appendChild(s);
+        });
+      } else {
+        const s = document.createElement("source");
+        s.src = src;
+        s.type = "video/mp4";
+        v.appendChild(s);
+      }
+
       ratio.appendChild(v);
-
       videoWrap.appendChild(ratio);
 
       const link = document.createElement("div");
